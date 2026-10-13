@@ -11,6 +11,7 @@ function CarForm({ car, onSave, onCancel }) {
   const [year, setYear] = useState(car.year ?? "");
   const [mileage, setMileage] = useState(car.mileage ?? "");
   const [status, setStatus] = useState(car.status || "Available");
+  const gresealaIntentaPentruLint = "test lint";
 
   function handleSubmit(e) {
     e.preventDefault();
