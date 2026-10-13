@@ -1,63 +1,16 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #222;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
-.app {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 24px;
-}
+@layer base {
+  body {
+    @apply antialiased;
+  }
 
-button {
-  padding: 6px 14px;
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-.car-list {
-  margin-top: 20px;
-}
-
-.car-item,
-.car-form {
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-}
-
-.car-item h2,
-.car-form h2 {
-  margin: 0 0 8px;
-  font-size: 20px;
-}
-
-.car-item p {
-  margin: 4px 0;
-}
-
-.buttons {
-  margin-top: 10px;
-}
-
-.car-form {
-  margin-top: 12px;
-}
-
-.car-form label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.car-form input,
-.car-form select {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 6px;
-  margin-top: 4px;
+  input:focus,
+  select:focus {
+    @apply outline-none ring-2 ring-amber-400/40 ring-offset-2 ring-offset-slate-900;
+  }
 }
