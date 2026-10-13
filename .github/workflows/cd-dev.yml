@@ -11,8 +11,12 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Test runner
+      - name: Update DEV source code
+        working-directory: /opt/apps/myGarage/dev/myGarage
         run: |
-          echo "Running on MiniLab"
-          hostname
-          whoami
+          git pull origin develop
+
+      - name: Rebuild and restart DEV containers
+        working-directory: /opt/apps/myGarage/dev/myGarage
+        run: |
+          docker compose up -d --build
