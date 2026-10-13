@@ -1,0 +1,18 @@
+name: CD - DEV
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy-dev:
+    name: Deploy DEV
+    runs-on: self-hosted
+
+    steps:
+      - name: Test runner
+        run: |
+          echo "Running on MiniLab"
+          hostname
+          whoami
